@@ -12,7 +12,6 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
 static const double IconSize = 200;
 static List<Widget> _widgetOptions = <Widget>[
 Inicio(),
-
 Acercade(),
 ];
 
@@ -23,14 +22,8 @@ _selectedIndex = index;
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-           iconTheme: IconThemeData(
-    color: Colors.black
-  ),
-   backgroundColor: Colors.white,
-       elevation: 0,
-      ),
+      return Scaffold(
+        
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -43,9 +36,11 @@ _selectedIndex = index;
             ),
             
             BottomNavigationBarItem(
+              
               icon: Icon(Icons.chat),
               label: 'Acerca de',
               backgroundColor: Colors.lightBlue,
+              
             ),
           ],
           type: BottomNavigationBarType.shifting,

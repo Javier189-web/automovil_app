@@ -18,6 +18,7 @@ class _InicioState extends State<Inicio> {
     'value': '0-999'
   },
   {
+    
     'index':1,
     'value': '1000-1999'
   },
@@ -45,9 +46,12 @@ class _InicioState extends State<Inicio> {
     'value': '4'
   },
   {
+
     'index':5,
     'value': 'mayor de 5'
+
   },
+
   ];
 
   int dropdownvalue3 = 2;
@@ -150,6 +154,7 @@ class _InicioState extends State<Inicio> {
         
           Column(
             children: [
+              
           SizedBox(height: 50),
               Text("Precio de mantenimiento", style: TextStyle(fontSize: 20),),
                 DropdownButton<int>(
@@ -269,16 +274,33 @@ class _InicioState extends State<Inicio> {
                 ),
 
             ],
+            
           ),
+        Column(
+          children: [
+            SizedBox(height: 50),
+            ElevatedButton.icon(
+          label:Text('Enviar datos'),
+          icon: Icon(Icons.send_rounded),
 
-        ElevatedButton(onPressed: ()async{
+          onPressed: ()async{
           Modelo modelo = Modelo(precio: dropdownvalue7, man: dropdownvalue, puerta: dropdownvalue2, persona: dropdownvalue3, cajuela: dropdownvalue4, seguridad: dropdownvalue5);
           print('enviar datos');
           String? enviar = await senddata(modelo);
           Navigator.of(context).push(MaterialPageRoute(builder: (context){
             return Comparando(resultado: enviar,);
           }));
-        }, child: Text('Enviar datos'))
+          
+        }, 
+        
+        ),
+        
+          ]
+        ),
+        
+        SizedBox(height: 50),
+        
+        
       
         ],
       ),
