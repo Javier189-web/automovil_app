@@ -1,6 +1,6 @@
 # carro2
 
-A new Flutter project.
+App mobil para encontrar tu auto ideal.
 
 ## Getting Started
 
